@@ -20,23 +20,18 @@ export function ClientLogosBar() {
       </Container>
       <div className="group mt-10 overflow-hidden">
         <ul
-          className="flex w-max items-center gap-16 motion-safe:animate-logo-scroll motion-safe:group-hover:[animation-play-state:paused] motion-safe:group-focus-within:[animation-play-state:paused]"
+         className="flex w-max items-center gap-16 motion-safe:animate-logo-scroll"
         >
           {loopLogos.map((logo, index) => (
             <li key={`${logo.name}-${index}`} className="shrink-0 grayscale">
-              <a
-                href={logo.websiteUrl}
-                className="block rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
-              >
-                <PlaceholderImage
-                  src={logo.logoPath}
-                  alt={logo.name}
-                  width={160}
-                  height={60}
-                  className="h-10 w-auto object-contain"
-                />
-              </a>
-            </li>
+  <PlaceholderImage
+    src={logo.logoPath}
+    alt={logo.name}
+    width={160}
+    height={60}
+    className="h-10 w-auto object-contain"
+  />
+</li>
           ))}
         </ul>
       </div>
