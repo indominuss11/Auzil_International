@@ -6,7 +6,6 @@ import { ProductCategoriesSection } from "@/components/sections/ProductCategorie
 import { ManufacturingServicesSection } from "@/components/sections/ManufacturingServicesSection";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { ManufacturingProcessSection } from "@/components/sections/ManufacturingProcessSection";
-import { DirectorIntro } from "@/components/sections/DirectorIntro";
 import { GallerySection } from "@/components/sections/GallerySection";
 import { IndustriesServedSection } from "@/components/sections/IndustriesServedSection";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -37,7 +36,6 @@ export default function HomePage() {
       <ManufacturingServicesSection />
       <WhyChoose />
       <ManufacturingProcessSection />
-      <DirectorIntro />
       <GallerySection />
       <IndustriesServedSection />
       <FinalCTA />
