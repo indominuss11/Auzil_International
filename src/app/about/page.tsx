@@ -34,7 +34,7 @@ export default function AboutPage() {
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-stone-700">
             Auzil International is a manufacturing and trading business based in
-            Delhi, India. The business's manufacturing knowledge is led by
+            Delhi, India. The business&apos;s manufacturing knowledge is led by
             Director {company.director.name}, who brings {company.director.experienceStatement.toLowerCase()}
             {" "}to every formulation, production run and client relationship.
           </p>
