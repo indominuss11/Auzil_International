@@ -79,14 +79,19 @@ export function MobileNav({ items }: { items: NavItem[] }) {
           className="fixed inset-0 top-16 z-50 overflow-y-auto bg-ivory px-4 py-6"
         >
           <ul className="space-y-1">
-            {items.map((item) => (
+            {items.map((item) => {
+              const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+              return (
               <li key={item.href}>
                 {item.children ? (
                   <div>
                     <div className="flex items-center justify-between">
                       <Link
                         href={item.href}
-                        className="block flex-1 rounded px-3 py-3 text-base font-medium text-ink-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+                        aria-current={isActive ? "page" : undefined}
+                        className={`block flex-1 rounded px-3 py-3 text-base font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage ${
+                          isActive ? "text-sage" : "text-ink-900"
+                        }`}
                       >
                         {item.label}
                       </Link>
@@ -110,29 +115,39 @@ export function MobileNav({ items }: { items: NavItem[] }) {
                     </div>
                     {expandedGroup === item.label && (
                       <ul id={`mobile-group-${item.label}`} className="ml-4 space-y-1 border-l border-stone-300 pl-4">
-                        {item.children.map((child) => (
+                        {item.children.map((child) => {
+                          const isChildActive = pathname === child.href;
+                          return (
                           <li key={child.href}>
                             <Link
                               href={child.href}
-                              className="block rounded px-3 py-2 text-sm text-ink-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+                              aria-current={isChildActive ? "page" : undefined}
+                              className={`block rounded px-3 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage ${
+                                isChildActive ? "text-sage font-medium" : "text-ink-700"
+                              }`}
                             >
                               {child.label}
                             </Link>
                           </li>
-                        ))}
+                          );
+                        })}
                       </ul>
                     )}
                   </div>
                 ) : (
                   <Link
                     href={item.href}
-                    className="block rounded px-3 py-3 text-base font-medium text-ink-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+                    aria-current={isActive ? "page" : undefined}
+                    className={`block rounded px-3 py-3 text-base font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage ${
+                      isActive ? "text-sage" : "text-ink-900"
+                    }`}
                   >
                     {item.label}
                   </Link>
                 )}
               </li>
-            ))}
+              );
+            })}
           </ul>
           <Link
             href="/request-a-quote"

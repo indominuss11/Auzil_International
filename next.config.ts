@@ -8,9 +8,13 @@ const isProd = process.env.NODE_ENV === "production";
 const csp = [
   "default-src 'self'",
   // Next.js needs 'unsafe-inline' for the tiny inline hydration script it
-  // emits; 'unsafe-eval' is NOT included. Replace with a nonce-based policy
-  // if stricter script-src is required by your security review.
-  "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com",
+  // emits. 'unsafe-eval' is required ONLY in development — Next's Hot
+  // Module Replacement / React Refresh runtime uses eval() to apply
+  // updates without a full reload, and without this the dev bundle throws
+  // a CSP EvalError that silently breaks client component interactivity
+  // (state, onClick, etc.) while plain <Link> navigation still works.
+  // Production builds don't need eval, so it's excluded there.
+  `script-src 'self' 'unsafe-inline'${isProd ? "" : " 'unsafe-eval'"} https://challenges.cloudflare.com`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
@@ -46,6 +50,15 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
+  },
+  async redirects() {
+    // /services and /industries were merged into /manufacturing as
+    // in-page sections. Redirect so old links/bookmarks/search results
+    // still land on the right content instead of 404ing.
+    return [
+      { source: "/services", destination: "/manufacturing#services", permanent: true },
+      { source: "/industries", destination: "/manufacturing#industries", permanent: true },
+    ];
   },
   async headers() {
     return [

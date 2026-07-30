@@ -57,7 +57,7 @@ export default function PrivateLabelPage() {
       />
       <Breadcrumbs
         items={[
-          { name: "Services", path: "/services" },
+          { name: "Manufacturing", path: "/manufacturing" },
           { name: "Private Label Manufacturing", path: "/private-label-manufacturing" },
         ]}
       />

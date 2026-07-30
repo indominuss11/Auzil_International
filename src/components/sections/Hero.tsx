@@ -11,12 +11,12 @@ export function Hero() {
             Manufacturing &amp; Trading — Delhi, India
           </p>
           <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-ink-900 sm:text-5xl">
-            Personal Care and Pet Care Manufacturing, Backed by Decades of
+            Manufacturing, Backed by Decades of
             Experience
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-stone-600">
             Auzil International helps businesses develop and manufacture personal
-            care, hygiene and pet grooming products—from formulation and
+            care, hygiene and pet grooming products, from formulation and
             sampling to packaging and production.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">

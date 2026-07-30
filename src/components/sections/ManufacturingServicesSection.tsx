@@ -30,7 +30,7 @@ export function ManufacturingServicesSection() {
         </div>
         <div className="mt-8">
           <Link
-            href="/services"
+            href="/manufacturing#services"
             className="text-sm font-medium text-sage underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
           >
             View all services

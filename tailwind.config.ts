@@ -23,10 +23,13 @@ const config: Config = {
           200: "#E6E2D8",
           300: "#D3CCBB",
         },
-        // "Sage" — the primary accent (buttons, links, dark accent bands).
+        // "Sage" — the primary accent (buttons, links, active nav states,
+        // dark accent bands). Kept light/saturated enough to read clearly
+        // as green against both white and ink-900, rather than blending
+        // toward near-black. 700 stays darker for :hover states on buttons.
         sage: {
-          DEFAULT: "#3F5B4C",
-          700: "#33493D",
+          DEFAULT: "#4F7A61",
+          700: "#3D6049",
         },
         // "Clay" — secondary accent for eyebrows, borders, small details.
         clay: {

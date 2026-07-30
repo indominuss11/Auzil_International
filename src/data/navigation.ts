@@ -30,8 +30,7 @@ export const mainNav: NavItem[] = [
       },
     ],
   },
-  { label: "Services", href: "/services" },
-  { label: "Industries", href: "/industries" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Catalogues", href: "/catalogues" },
   { label: "Contact", href: "/contact" },
 ];
@@ -40,7 +39,8 @@ export const footerNav = {
   company: [
     { label: "About Auzil", href: "/about" },
     { label: "Manufacturing", href: "/manufacturing" },
-    { label: "Industries We Serve", href: "/industries" },
+    { label: "Industries We Serve", href: "/manufacturing#industries" },
+    { label: "Gallery", href: "/gallery" },
     { label: "Catalogues", href: "/catalogues" },
   ],
   products: [
@@ -50,7 +50,7 @@ export const footerNav = {
     { label: "Custom Manufacturing", href: "/products/custom-manufacturing" },
   ],
   services: [
-    { label: "All Services", href: "/services" },
+    { label: "All Services", href: "/manufacturing#services" },
     { label: "Private Label Manufacturing", href: "/private-label-manufacturing" },
     { label: "Request a Quote", href: "/request-a-quote" },
   ],

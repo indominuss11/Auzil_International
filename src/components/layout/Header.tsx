@@ -3,6 +3,7 @@ import Image from "next/image";
 import { mainNav } from "@/data/navigation";
 import { ProductsDropdown } from "./ProductsDropdown";
 import { MobileNav } from "./MobileNav";
+import { NavLink } from "./NavLink";
 
 export function Header() {
   return (
@@ -27,13 +28,7 @@ export function Header() {
             item.children ? (
               <ProductsDropdown key={item.href} item={item} />
             ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded px-1 py-2 text-sm font-medium text-ink-900 hover:text-sage focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
-              >
-                {item.label}
-              </Link>
+              <NavLink key={item.href} href={item.href} label={item.label} />
             ),
           )}
         </nav>

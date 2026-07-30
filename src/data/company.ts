@@ -28,7 +28,7 @@ export const company = {
     message:
       "Over the past three decades, I have seen products, markets and customer expectations evolve considerably. However, the foundations of a dependable manufacturing partnership remain unchanged: consistent quality, honest communication and a willingness to understand the customer's business. At Auzil International, we bring these values into every product we develop and manufacture.",
     portrait: {
-      src: "/images/director-portrait.svg",
+      src: "/images/director-portrait.png",
       alt: "Aman Arora, Director of Auzil International",
     },
   },

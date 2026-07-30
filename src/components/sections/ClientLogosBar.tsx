@@ -14,9 +14,9 @@ export function ClientLogosBar() {
   const loopLogos = [...confirmedLogos, ...confirmedLogos];
 
   return (
-    <section aria-label="Companies we have worked with" className="bg-stone-100 py-14">
+    <section aria-label="Brands we own and work with" className="bg-stone-100 py-14">
       <Container>
-        <SectionHeading title="Trusted Manufacturing Partner to Growing Brands" align="center" />
+        <SectionHeading title="Brands We Own & Work With" align="center" />
       </Container>
       <div className="group mt-10 overflow-hidden">
         <ul
