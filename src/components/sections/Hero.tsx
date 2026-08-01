@@ -33,7 +33,7 @@ export function Hero() {
         </div>
         <div className="relative">
           <PlaceholderImage
-            src="/images/hero-manufacturing.svg"
+            src="/images/hero-manufacturing.png"
             alt="Manufacturing floor at Auzil International, where personal care and pet care products are produced"
             width={1600}
             height={1000}
